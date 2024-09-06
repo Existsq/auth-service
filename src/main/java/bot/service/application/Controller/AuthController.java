@@ -22,6 +22,6 @@ public class AuthController {
   @GetMapping("/auth/{value}")
   @ResponseBody
   public String auth(@PathVariable String value) {
-    return jwtService.createJwt("test", 23).toString();
+    return "";
   }
 }
