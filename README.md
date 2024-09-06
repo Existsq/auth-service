@@ -1,1 +1,1 @@
-# bot-service
+# auth-service
