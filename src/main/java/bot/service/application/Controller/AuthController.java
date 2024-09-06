@@ -1,6 +1,7 @@
 package bot.service.application.Controller;
 
 import bot.service.application.Service.AuthService;
+import bot.service.application.Service.JwtService;
 import lombok.AllArgsConstructor;
 import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.stereotype.Component;
@@ -16,11 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class AuthController {
 
-  private final AuthService authService;
+  private final JwtService jwtService;
 
   @GetMapping("/auth/{value}")
   @ResponseBody
   public String auth(@PathVariable String value) {
-    return value;
+    return jwtService.createJwt("test", 23).toString();
   }
 }
